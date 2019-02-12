@@ -4,3 +4,5 @@ project(LoopoverBFA)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(LoopoverBFA main.cpp)
+
+set( CMAKE_CXX_FLAGS "-Ofast -march=native " )
