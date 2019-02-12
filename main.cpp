@@ -3,8 +3,7 @@
 #define N 2
 #define M 2
 
-int** getInitBoard()
-{
+int** getInitBoard() {
     int* values = static_cast<int *>(calloc(M * N, sizeof(int)));
     int** rows = static_cast<int **>(malloc(M * sizeof(int*)));
     for (int i=0; i<M; ++i) {
@@ -30,8 +29,8 @@ long hashBoard(int** board) {
     }
     return boardHash;
 }
-
 int** unHashBoard(long boardHash) {
+    long currentHash = boardHash;
     int* values = static_cast<int *>(calloc(M * N, sizeof(int)));
     int** rows = static_cast<int **>(malloc(M * sizeof(int*)));
     for (int i=0; i<M; ++i) {
@@ -39,33 +38,36 @@ int** unHashBoard(long boardHash) {
     }
     for (int i=0; i<M; i++) {
         for(int j=0; j<N; j++) {
-            rows[i][j] = 0;
+            int current = static_cast<int>(currentHash % (M * N));
+            if (current) {
+                rows[i][j] = current;
+            } else {
+                rows[i][j] = N*M;
+            }
+            currentHash /= N*M;
         }
     }
     return rows;
 }
 
 int main() {
-
     int** boardTest = getInitBoard();
-
     for(int i = 0; i < M; i++) {
         for(int j = 0; j < N; j++) {
             printf("%d ", boardTest[i][j]);
         }
         printf("\n");
     }
-
     printf("%li\n", hashBoard(boardTest));
-
-    int** boardTest2;
-
+    int** boardTest2 = unHashBoard(hashBoard(boardTest));
     for(int i = 0; i < M; i++) {
         for(int j = 0; j < N; j++) {
             printf("%d ", boardTest2[i][j]);
         }
         printf("\n");
     }
+
+
 
     return 0;
 }

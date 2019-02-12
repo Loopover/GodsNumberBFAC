@@ -1,11 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### CMake template
-CMakeCache.txt
-CMakeFiles
 CMakeScripts
 Testing
-Makefile
-cmake_install.cmake
 install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
@@ -13,13 +9,9 @@ CTestTestfile.cmake
 # Virtualenv
 # http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
 .Python
-[Bb]in
-[Ii]nclude
-[Ll]ib
 [Ll]ib64
 [Ll]ocal
 [Ss]cripts
-pyvenv.cfg
 .venv
 pip-selfcheck.json
 ### C template
@@ -27,7 +19,6 @@ pip-selfcheck.json
 *.d
 
 # Object files
-*.o
 *.ko
 *.obj
 *.elf
@@ -54,8 +45,6 @@ pip-selfcheck.json
 *.dylib
 
 # Executables
-*.exe
-*.out
 *.app
 *.i*86
 *.x86_64
@@ -88,7 +77,6 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
 lib64/
 parts/
 sdist/
@@ -96,7 +84,6 @@ var/
 wheels/
 *.egg-info/
 .installed.cfg
-*.egg
 MANIFEST
 
 # PyInstaller
@@ -126,7 +113,6 @@ coverage.xml
 *.pot
 
 # Django stuff:
-*.log
 local_settings.py
 db.sqlite3
 
@@ -229,3 +215,9 @@ fabric.properties
 # Editor-based Rest Client
 .idea/httpRequests
 
+.DS_Store
+.idea/LoopoverBFA.iml
+.idea/codeStyles/
+.idea/encodings.xml
+.idea/misc.xml
+.idea/modules.xml
